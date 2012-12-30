@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Reflection.Emit;
 
 namespace SharpMock
 {
@@ -36,12 +37,30 @@ namespace SharpMock
 				interfaces.Add(type);
 			}
 
-			using (var outputFilewriter = new StreamWriter(outputFilename))
+			// Initialize an assembly and module builder for use for all generated classes
+			var appDomain = AppDomain.CurrentDomain;
+			var assemblyName = new AssemblyName()
+			{
+				Name = assembly.FullName + "_Mocks"
+			};
+
+			var assemblyBuilder = appDomain.DefineDynamicAssembly(assemblyName, AssemblyBuilderAccess.Save);
+			var moduleBuilder = assemblyBuilder.DefineDynamicModule(
+				assemblyName.Name,
+				outputFilename,
+				true);
+
+			GC.KeepAlive(moduleBuilder);
+
+			assemblyBuilder.Save(outputFilename);
+
+
+			/*using (var outputFilewriter = new StreamWriter(outputFilename))
 			{
 				new InterfaceImplementor().Implement(outputFilewriter, interfacesByNamespace);
 
 				outputFilewriter.Flush();
-			}
+			}*/
 		}
 	}
 }
