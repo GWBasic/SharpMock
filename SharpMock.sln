@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpMock", "SharpMock\SharpMock.csproj", "{5FB02678-CD7B-4094-AAE3-F6F527A1CABF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3C0A5A84-8184-4477-8BD2-84BAAFC70340}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FB02678-CD7B-4094-AAE3-F6F527A1CABF}.Debug|x86.ActiveCfg = Debug|x86
+		{5FB02678-CD7B-4094-AAE3-F6F527A1CABF}.Debug|x86.Build.0 = Debug|x86
+		{5FB02678-CD7B-4094-AAE3-F6F527A1CABF}.Release|x86.ActiveCfg = Release|x86
+		{5FB02678-CD7B-4094-AAE3-F6F527A1CABF}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = SharpMock\SharpMock.csproj
+	EndGlobalSection
+EndGlobal
